@@ -12,6 +12,23 @@ since no unnecessary code and no scripts are transfered.
 Also, you won't see any advertisement (unless it's a static picture that is hard to detect as ads).
 There are no trackers too.
 
+## How to use it
+
+*txtdot* is an open source software, so everyone can host it on his own server.
+The official instance is [txt.dc09.ru](https://txt.dc09.ru),
+the list of unofficial is [here](https://github.com/txtdot/instances).
+
+On the main page, there's a handy form where you can
+specify a URL, choose an engine and a format for parsed data.
+On the `/get` page, "Home" button returns you to `/`,
+"Original page" opens the entered URL in the same window without txtdot proxy.
+
+The latest docs for API endpoints can be found [here](https://txt.dc09.ru/doc).
+For handy JSON API, use `/api/parse` returning an engine result object (see below).
+For pure HTML response, use `/api/raw-html`.
+Note that both API and browser endpoints on txt.dc09.ru
+are ratelimited to 2 requests per second.
+
 ## How it works
 
 This project exists thanks to great Mozilla's
