@@ -2,21 +2,21 @@
 
 ## What is this
 
-*txtdot* is a proxy that requests the page by the given URL,
+_txtdot_ is a proxy that requests the page by the given URL,
 extracts only useful data including text, links, pictures and tables,
 and returns it as an HTML page with a minimalistic design
 optimized for text reading.
 
-*txtdot* increases the loading speed and reduces client's bandwidth usage
+_txtdot_ increases the loading speed and reduces client's bandwidth usage
 since no unnecessary code and no scripts are transfered.
 Also, you won't see any advertisement (unless it's a static picture that is hard to detect as ads).
 There are no trackers too.
 
 ## How to use it
 
-*txtdot* is an open source software, so everyone can host it on his own server.
+_txtdot_ is an open source software, so everyone can host it on his own server.
 The official instance is [txt.dc09.ru](https://txt.dc09.ru),
-the list of unofficial is [here](https://github.com/txtdot/instances).
+the list of all instances is [here](https://github.com/txtdot/instances).
 
 On the main page, there's a handy form where you can
 specify a URL, choose an engine and a format for parsed data.
@@ -41,7 +41,7 @@ Readability performs its work very well in most cases.
 But not always. For example, check any StackOverflow page or Google search results.
 
 So [artegoser](https://github.com/artegoser) wrote the basis of the code
-keeping in mind that we'll extend txtdot with other *engines*.
+keeping in mind that we'll extend txtdot with other _engines_.
 For now, engines are functions taking a URL as a parameter,
 returning an object that contains extracted HTML and plain text, page title and language.
 The object is rendered with ejs template (or, in `/api/parse`, just sent as JSON).
