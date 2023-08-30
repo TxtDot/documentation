@@ -29,6 +29,8 @@ For now, engines are functions taking a URL as a parameter,
 returning an object that contains extracted HTML and plain text, page title and language.
 The object is rendered with ejs template (or, in `/api/parse`, just sent as JSON).
 
-If a `?engine=` parameter wasn't passed, txtdot checks
-if the requested domain is assigned to a specific engine,
-for example, "stackoverflow.com" -> "stackoverflow".
+If an `?engine=` parameter wasn't passed, but txtdot found
+that a specific engine is assigned to the requested domain,
+for example, `"stackoverflow.com": stackoverflow`,
+it uses that engine to process the URL.
+Otherwise, the page is parsed with the engine assigned to `*` (it's Readability).
