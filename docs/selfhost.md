@@ -5,6 +5,7 @@
 Install Node and NPM:
 ```bash
 # Debian, Ubuntu
+# TODO: Really old version in repos, use nodesource
 sudo apt install nodejs npm
 # CentOS
 sudo yum install nodejs
@@ -18,7 +19,7 @@ Create a user for txtdot, log in:
 ```bash
 # Not Alpine (coreutils)
 sudo useradd -r -m -s /sbin/nologin -U txtdot
-sudo -u txtdot -i
+sudo -u txtdot bash
 
 # Alpine (busybox)
 doas addgroup -S txtdot
@@ -48,9 +49,9 @@ Log out from txtdot account: `exit`
 ### Add txtdot to autostart
 Either using systemd unit file:
 ```bash
-wget https://github.com/TxtDot/txtdot/blob/main/txtdot.service
+wget https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.service
 sudo chown root:root txtdot.service
-sudo chmod 755 txtdot.service
+sudo chmod 644 txtdot.service
 sudo mv txtdot.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable txtdot
@@ -59,7 +60,7 @@ sudo systemctl start txtdot
 
 Or using OpenRC script:
 ```bash
-wget -O txtdot https://github.com/TxtDot/txtdot/blob/main/txtdot.init
+wget -O txtdot https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.init
 doas chown root:root txtdot
 doas chmod 755 txtdot
 doas mv txtdot /etc/init.d/
