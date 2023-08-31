@@ -1,4 +1,6 @@
 site_name: txtdot
+repo_url: https://github.com/txtdot/txtdot
+repo_name: txtdot/txtdot
 theme:
   name: material
   palette:
@@ -14,3 +16,5 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
