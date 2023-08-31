@@ -8,7 +8,7 @@ and returns it as an HTML page with a minimalistic design
 optimized for text reading.
 
 _txtdot_ increases the loading speed and reduces client's bandwidth usage
-since no unnecessary code and no scripts are transfered.
+since no unnecessary code and no scripts are transferred.
 Also, you won't see any advertisement (unless it's a static picture that is hard to detect as ads).
 There are no trackers too.
 
