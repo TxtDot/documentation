@@ -2,11 +2,14 @@
 
 ## Without Docker
 
-Install Node and NPM:
+### Install nodejs and npm
+
+For Debian, Ubuntu: packages in the repository are so old,
+consider installing them with [NodeSource](https://github.com/nodesource/distributions#installation-instructions).
+Minimal required version is NodeJS 18.
+
+Other distros:
 ```bash
-# Debian, Ubuntu
-# TODO: Really old version in repos, use nodesource
-sudo apt install nodejs npm
 # CentOS
 sudo yum install nodejs
 # Arch
@@ -15,26 +18,37 @@ sudo pacman -S nodejs npm
 doas apk add nodejs npm
 ```
 
-Create a user for txtdot, log in:
+### User for txtdot
+
+Almost all distros except Alpine:
 ```bash
-# Not Alpine (coreutils)
 sudo useradd -r -m -s /sbin/nologin -U txtdot
 sudo -u txtdot bash
+```
 
-# Alpine (busybox)
+Alpine Linux with busybox + doas:
+```bash
 doas addgroup -S txtdot
 doas adduser -h /home/txtdot -s /sbin/nologin -G txtdot -S -D txtdot
 doas -u txtdot bash
 ```
 
-Clone the repo: 
+### Build, config and launch
+
+Clone the git repository, cd into it:
 ```bash
 git clone https://github.com/txtdot/txtdot.git src
+cd src
+```
+
+Copy and modify the sample config file (see the Environment section):
+```bash
+cp .env.example .env
+nano .env
 ```
 
 Install packages, compile TS:
 ```bash
-cd src
 npm install
 npm run build
 ```
@@ -44,7 +58,10 @@ Manually start the server to check if it works (Ctrl+C to exit):
 npm run start
 ```
 
-Log out from txtdot account: `exit`
+Log out from the txtdot account:
+```bash
+exit
+```
 
 ### Add txtdot to autostart
 Either using systemd unit file:
