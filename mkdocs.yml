@@ -1,4 +1,10 @@
 site_name: txtdot
+nav:
+  - "Getting Started": index.md
+  - "Self-Hosting": selfhost.md
+  - "Docker": docker.md
+  - "Configuring": env.md
+  - "Reverse Proxy": reverse.md
 repo_url: https://github.com/txtdot/txtdot
 repo_name: txtdot/txtdot
 theme:
