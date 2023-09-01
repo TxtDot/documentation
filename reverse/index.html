@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../env/">
       
-      
-        <link rel="next" href="../docker/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Self-Hosting - txtdot</title>
+        <title>Reverse Proxy - txtdot</title>
       
     
     
@@ -75,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-hosting" class="md-skip">
+        <a href="#reverse-proxy" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Hosting
+              Reverse Proxy
             
           </span>
         </div>
@@ -267,29 +265,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Self-Hosting
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../selfhost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,54 +276,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-nodejs-and-npm" class="md-nav__link">
-    Install nodejs and npm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-user-for-txtdot" class="md-nav__link">
-    Create a user for txtdot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-config-and-launch" class="md-nav__link">
-    Build, config and launch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-txtdot-to-autostart" class="md-nav__link">
-    Add txtdot to autostart
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -392,9 +322,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../reverse/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reverse Proxy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -403,6 +353,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    Apache
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -434,29 +418,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-nodejs-and-npm" class="md-nav__link">
-    Install nodejs and npm
+  <a href="#nginx" class="md-nav__link">
+    Nginx
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-user-for-txtdot" class="md-nav__link">
-    Create a user for txtdot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-config-and-launch" class="md-nav__link">
-    Build, config and launch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-txtdot-to-autostart" class="md-nav__link">
-    Add txtdot to autostart
+  <a href="#apache" class="md-nav__link">
+    Apache
   </a>
   
 </li>
@@ -479,74 +449,91 @@
   
 
 
-<h1 id="self-hosting">Self-Hosting</h1>
-<p>If you prefer hosting with Docker, see <a href="../docker/">Docker</a> instead.</p>
-<h2 id="install-nodejs-and-npm">Install nodejs and npm</h2>
-<p>For Debian, Ubuntu: packages in the repository are so old,
-consider installing them with <a href="https://github.com/nodesource/distributions#installation-instructions">NodeSource</a>.
-Minimal required version is NodeJS 18.</p>
-<p>Other distros:</p>
-<pre><code class="language-bash"># CentOS
-sudo yum install nodejs
-# Arch
-sudo pacman -S nodejs npm
-# Alpine
-doas apk add nodejs npm
+<h1 id="reverse-proxy">Reverse Proxy</h1>
+<h2 id="nginx">Nginx</h2>
+<p>Basically, you just need to set the domain, TLS certificates,
+Host and X-Forwarded headers (so txtdot could know the hostname)
+and pass all requests to txtdot.</p>
+<pre><code>server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    # Replace the domain
+    server_name txt.dc09.ru;
+
+    ssl_certificate ...pem;
+    ssl_certificate_key ...key;
+    # More options here:
+    # https://ssl-config.mozilla.org/#server=nginx&amp;config=modern
+
+    location / {
+        # Replace 8080 port if needed
+        proxy_pass http://127.0.0.1:8080;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
 </code></pre>
-<h2 id="create-a-user-for-txtdot">Create a user for txtdot</h2>
-<p>Almost all distros except Alpine:</p>
-<pre><code class="language-bash">sudo useradd -r -m -s /sbin/nologin -U txtdot
-sudo -u txtdot bash
+<p>On the official instance, TLS is configured in the main nginx config,
+so we omit these options below.</p>
+<p>Nginx serves static files faster than NodeJS, let's configure it:</p>
+<pre><code>server {
+    ...
+
+    location /static/ {
+        alias /home/txtdot/src/dist/static/;
+    }
+}
 </code></pre>
-<p>Alpine Linux with busybox and doas:</p>
-<pre><code class="language-bash">doas addgroup -S txtdot
-doas adduser -h /home/txtdot -s /sbin/nologin -G txtdot -S -D txtdot
-doas -u txtdot bash
+<p>What about rate-limiting? We don't want the hackers to overload our proxy.</p>
+<p>The config below rate-limits to 2 requests per second,
+allows to put up to 4 requests into the queue,
+sets the maximum size for zone to 10 megabytes.
+See the <a href="https://www.nginx.com/blog/rate-limiting-nginx/">Nginx blog post</a> for detailed explanation.</p>
+<pre><code>limit_req_zone $binary_remote_addr zone=txtdotapi:10m rate=2r/s;
+
+server {
+    ...
+    location / {
+        limit_req zone=txtdotapi burst=4;
+        ...
+    }
+    ...
+}
 </code></pre>
-<h2 id="build-config-and-launch">Build, config and launch</h2>
-<p>Clone the git repository, cd into it:</p>
-<pre><code class="language-bash">git clone https://github.com/txtdot/txtdot.git src
-cd src
+<p>Let's put all together.
+Here's our <a href="https://github.com/TxtDot/txtdot/blob/main/config/nginx.conf">sample config</a>:</p>
+<pre><code>limit_req_zone $binary_remote_addr zone=txtdotapi:10m rate=2r/s;
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name txt.dc09.ru;
+
+    location / {
+        limit_req zone=txtdotapi burst=4;
+        proxy_pass http://127.0.0.1:8080;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /static/ {
+        alias /home/txtdot/src/dist/static/;
+    }
+}
 </code></pre>
-<p>Copy and modify the sample config file (see the <a href="../env/">Configuring</a> section):</p>
-<pre><code class="language-bash">cp .env.example .env
-nano .env
-</code></pre>
-<p>Install packages, compile TS:</p>
-<pre><code class="language-bash">npm install
-npm run build
-</code></pre>
-<p>Manually start the server to check if it works (Ctrl+C to exit):</p>
-<pre><code class="language-bash">npm run start
-</code></pre>
-<p>Log out from the txtdot account:</p>
-<pre><code class="language-bash">exit
-</code></pre>
-<h2 id="add-txtdot-to-autostart">Add txtdot to autostart</h2>
-<p>Either using systemd unit file:</p>
-<pre><code class="language-bash">wget https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.service
-sudo chown root:root txtdot.service
-sudo chmod 644 txtdot.service
-sudo mv txtdot.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable txtdot
-sudo systemctl start txtdot
-</code></pre>
-<p>Or using OpenRC script:</p>
-<pre><code class="language-bash">wget -O txtdot https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.init
-doas chown root:root txtdot
-doas chmod 755 txtdot
-doas mv txtdot /etc/init.d/
-doas rc-update add txtdot
-doas rc-service txtdot start
-</code></pre>
-<p>Or using crontab:</p>
-<pre><code class="language-bash">sudo crontab -u txtdot -e
-# The command will open an editor
-# Add this line to the end of the file:
-@reboot sleep 10 &amp;&amp; cd /home/txtdot/src &amp;&amp; npm run start
-# Save the file and exit
-</code></pre>
+<h2 id="apache">Apache</h2>
+<p>Coming soon.
+If you are familiar with Apache httpd and want to help,
+write a config here (a small explanation as above also would be great)
+and open a <a href="https://github.com/txtdot/documentation/pulls">pull request</a>.</p>
 
 
 
