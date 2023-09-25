@@ -24,3 +24,16 @@ Default: `false`
 
 Set it to `true` only if your txtdot instance runs behind reverse proxy.
 Needed for processing X-Forwarded headers.
+
+## PROXY_RES
+
+Default: `true`
+
+Whether to allow proxying images, video, audio
+and everything else through your txtdot instance.
+
+## SWAGGER
+
+Default: `false`
+
+Whether to add `/doc` route for Swagger API docs.
