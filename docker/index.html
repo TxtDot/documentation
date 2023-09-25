@@ -387,17 +387,16 @@
 
 <h1 id="docker">Docker</h1>
 <p>If you prefer hosting without Docker, see <a href="../selfhost/">Self-Hosting</a> instead.</p>
-<p>Docker Engine and Docker Compose are required.</p>
-<p>Note that built images are not provided via Docker Hub.
-If you can't or don't want to build them on your server
-and don't want to setup a CI/CD system,
-<a href="https://github.com/txtdot/txtdot/issues">let us know</a>,
-we'll consider setting up a GitHub Actions workflow.</p>
-<pre><code class="language-bash">git clone https://github.com/txtdot/txtdot.git
-cd txtdot
-docker compose build
+<p>Download docker-compose.yml and txtdot configs,
+edit them and then start the container:</p>
+<pre><code class="language-bash">wget https://raw.githubusercontent.com/TxtDot/txtdot/main/docker-compose.yml
+wget -O .env https://raw.githubusercontent.com/TxtDot/txtdot/main/.env.example
+nano .env
 docker compose up -d
 </code></pre>
+<p>Alternatively, you can configure txtdot with
+the <code>environment</code> section of docker-compose config
+(don't forget to remove .env and <code>volumes</code>).</p>
 
 
 
