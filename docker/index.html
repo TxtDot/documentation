@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../selfhost/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="../env/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
     
     
       
-        <title>Self-Hosting - txtdot</title>
+        <title>Docker - txtdot</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0e669242.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-hosting" class="md-skip">
+        <a href="#docker" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +91,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="txtdot" class="md-header__button md-logo" aria-label="txtdot" data-md-component="logo">
+    <a href=".." title="txtdot" class="md-header__button md-logo" aria-label="txtdot" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -107,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Hosting
+              Docker
             
           </span>
         </div>
@@ -217,7 +221,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="txtdot" class="md-nav__button md-logo" aria-label="txtdot" data-md-component="logo">
+    <a href=".." title="txtdot" class="md-nav__button md-logo" aria-label="txtdot" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -246,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -265,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../selfhost.md" class="md-nav__link">
+      <a href="../selfhost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -282,9 +286,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../docker.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -293,6 +306,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -303,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../env.md" class="md-nav__link">
+      <a href="../env/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -322,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../reverse.md" class="md-nav__link">
+      <a href="../reverse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -355,42 +369,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-nodejs-and-npm" class="md-nav__link">
-    Install nodejs and npm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-user-for-txtdot" class="md-nav__link">
-    Create a user for txtdot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-config-and-launch" class="md-nav__link">
-    Build, config and launch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-txtdot-to-autostart" class="md-nav__link">
-    Add txtdot to autostart
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -407,74 +385,18 @@
   
 
 
-<h1 id="self-hosting">Self-Hosting</h1>
-<p>If you prefer hosting with Docker, see <a href="../docker/">Docker</a> instead.</p>
-<h2 id="install-nodejs-and-npm">Install nodejs and npm</h2>
-<p>For Debian, Ubuntu: packages in the repository are so old,
-consider installing them with <a href="https://github.com/nodesource/distributions#installation-instructions">NodeSource</a>.
-Minimal required version is NodeJS 18.</p>
-<p>Other distros:</p>
-<pre><code class="language-bash"># CentOS
-sudo yum install nodejs
-# Arch
-sudo pacman -S nodejs npm
-# Alpine
-doas apk add nodejs npm
-</code></pre>
-<h2 id="create-a-user-for-txtdot">Create a user for txtdot</h2>
-<p>Almost all distros except Alpine:</p>
-<pre><code class="language-bash">sudo useradd -r -m -s /sbin/nologin -U txtdot
-sudo -u txtdot bash
-</code></pre>
-<p>Alpine Linux with busybox and doas:</p>
-<pre><code class="language-bash">doas addgroup -S txtdot
-doas adduser -h /home/txtdot -s /sbin/nologin -G txtdot -S -D txtdot
-doas -u txtdot bash
-</code></pre>
-<h2 id="build-config-and-launch">Build, config and launch</h2>
-<p>Clone the git repository, cd into it:</p>
-<pre><code class="language-bash">git clone https://github.com/txtdot/txtdot.git src
-cd src
-</code></pre>
-<p>Copy and modify the sample config file (see the <a href="../env/">Configuring</a> section):</p>
-<pre><code class="language-bash">cp .env.example .env
+<h1 id="docker">Docker</h1>
+<p>If you prefer hosting without Docker, see <a href="../selfhost/">Self-Hosting</a> instead.</p>
+<p>Download docker-compose.yml and txtdot configs,
+edit them and then start the container:</p>
+<pre><code class="language-bash">wget https://raw.githubusercontent.com/TxtDot/txtdot/main/docker-compose.yml
+wget -O .env https://raw.githubusercontent.com/TxtDot/txtdot/main/.env.example
 nano .env
+docker compose up -d
 </code></pre>
-<p>Install packages, compile TS:</p>
-<pre><code class="language-bash">npm install
-npm run build
-</code></pre>
-<p>Manually start the server to check if it works (Ctrl+C to exit):</p>
-<pre><code class="language-bash">npm run start
-</code></pre>
-<p>Log out from the txtdot account:</p>
-<pre><code class="language-bash">exit
-</code></pre>
-<h2 id="add-txtdot-to-autostart">Add txtdot to autostart</h2>
-<p>Either using systemd unit file:</p>
-<pre><code class="language-bash">wget https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.service
-sudo chown root:root txtdot.service
-sudo chmod 644 txtdot.service
-sudo mv txtdot.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable txtdot
-sudo systemctl start txtdot
-</code></pre>
-<p>Or using OpenRC script:</p>
-<pre><code class="language-bash">wget -O txtdot https://raw.githubusercontent.com/TxtDot/txtdot/main/config/txtdot.init
-doas chown root:root txtdot
-doas chmod 755 txtdot
-doas mv txtdot /etc/init.d/
-doas rc-update add txtdot
-doas rc-service txtdot start
-</code></pre>
-<p>Or using crontab:</p>
-<pre><code class="language-bash">sudo crontab -u txtdot -e
-# The command will open an editor
-# Add this line to the end of the file:
-@reboot sleep 10 &amp;&amp; cd /home/txtdot/src &amp;&amp; npm run start
-# Save the file and exit
-</code></pre>
+<p>Alternatively, you can configure txtdot with
+the <code>environment</code> section of docker-compose config
+(don't forget to remove .env and <code>volumes</code>).</p>
 
 
 
@@ -512,10 +434,10 @@ doas rc-service txtdot start
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../assets/javascripts/bundle.78eede0e.min.js"></script>
       
     
   </body>
