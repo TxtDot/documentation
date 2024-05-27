@@ -38,16 +38,68 @@ so the client does not need to download and execute heavy JS,
 doesn't need to use an adblock.
 
 Readability performs its work very well in most cases.
-But not always. For example, check any StackOverflow page or Google search results.
-
-So [artegoser](https://github.com/artegoser) wrote the basis of the code
-keeping in mind that we'll extend txtdot with other _engines_.
-For now, engines are functions taking a URL as a parameter,
-returning an object that contains extracted HTML and plain text, page title and language.
-The object is rendered with ejs template (or, in `/api/parse`, just sent as JSON).
 
 If an `?engine=` parameter wasn't passed, but txtdot found
 that a specific engine is assigned to the requested domain,
-for example, `"stackoverflow.com": stackoverflow`,
+for example, `"stackoverflow.com": engines.StackOverflow`,
 it uses that engine to process the URL.
 Otherwise, the page is parsed with the engine assigned to `*` (it's Readability).
+
+### Plugins
+
+Readability is good, but now always, so [artegoser](https://github.com/artegoser) wrote the basis of the code
+keeping in mind that we'll extend txtdot with other _engines_.
+Back then, it was functions taking a URL as a parameter,
+returning an object that contains extracted HTML and plain text, page title and language.
+The object is rendered with ejs template (or, in `/api/parse`, just sent as JSON).
+
+But after a while it became unwieldy and we decided to create a monorepo. We created classes Engines, Middlewares that handle the necessary parts. Now you can create such functions for different domains, and routes. Also we added support for JSX for simplifying the code of plugins.
+
+## Engines
+
+Creation of engines is easy.
+
+```ts
+import { Engine, Route } from "@txtdot/sdk";
+
+const Readability = new Engine(
+  "Readability", // Name of the engine
+  "Engine for parsing content with Readability", // Description
+  ["*"] // Domains that use this engine
+);
+
+Readability.route("*path", async (input, ro: Route<{ path: string }>) => {
+  // ...
+
+  // If any of the parameters except content is empty, txtdot will try to extract it from the page automatically
+  return {
+    content: parsed.content,
+    title: parsed.title,
+    lang: parsed.lang,
+  };
+});
+```
+
+## Middlewares
+
+Creation of middlewares similar to engines.
+
+```tsx
+import { Middleware } from "@txtdot/sdk";
+
+const Highlight = new Middleware(
+  "Highlight",
+  "Highlights code with highlight.js only when needed",
+  ["*"]
+);
+
+Highlight.use(async (input, ro, out) => {
+  if (out.content.indexOf("<code") !== -1)
+    return {
+      ...out,
+      content: <Highlighter content={out.content} />,
+    };
+
+  return out;
+});
+```
